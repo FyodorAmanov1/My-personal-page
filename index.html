@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div>
+            <!-- Add your photo in a circular shape -->
+            <img src="Profile_photo.jpg" alt="My Photo" class="profile-pic">
+        </div>
+        <h2>Welcome!</h2>
+        <p><i>Hi there! This is my portfolio website. Explore my projects and get to know more about me :)</i></p>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello I am Fyodor Amanov, I genuinely love to discover and learn the world. This motto might have inspired me to choose Quantum physics, Artificial intelligence, Software engineering and Sustainability. 
+            I am also into themes on Education, Ecology and Poetry.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>I get to do some stuff in Quantum physics, Education and AI:</p>
+        <!-- Add your projects here -->
+        <ul>
+            <li> Summer schools and Winter Schools: <a href="https://camp.newuu.uz/">Read more on our schools!</a></li>
+            <li> Quantum physics and oranges: <a href="https://docs.google.com/document/d/1NOdGxhopovEzF58ZAep4_sL8lpuXL2QjZLt_rcx9jCY/edit">Read my book!</a></li>
+            <li>Research on AI: <a href="https://ieeexplore.ieee.org/document/10194056">Have a look at my research!</a></li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Get in touch with me:</p>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" required></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Event listener for hovering over the profile picture
+        document.getElementById("profile-pic").addEventListener("mouseover", function() {
+            this.style.transform = "scale(1.1)";
+        });
+
+        document.getElementById("profile-pic").addEventListener("mouseout", function() {
+            this.style.transform = "scale(1)";
+        });
+
+        // Function to reveal sections when scrolling
+        function revealSections() {
+            const sections = document.querySelectorAll("section");
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (sectionTop <= windowHeight - 100) {
+                    section.classList.add("show");
+                }
+            });
+        }
+
+        // Add event listener for scroll event
+        window.addEventListener("scroll", revealSections);
+
+        // Initial call to reveal sections on load
+        revealSections();
+    </script>
+
+</body>
+</html>
