@@ -1,11 +1,36 @@
-Explanation:
-Header: Contains the title and navigation bar.
-Navigation Bar: Allows the user to navigate between different sections of the website.
-Sections: Each section (Home, About Me, Projects, and Contact) is identified by an ID for easy navigation and reference.
-CSS: Styles the website, including the layout, colors, and fonts.
-Form in Contact Section: Allows visitors to send a message or inquiry.
-About Me Section: In the "About Me" section, the img element is used to display your photo. Replace "path_to_your_photo.jpg" with the path to your photo file.
-CSS Styling: The profile-pic class styles the image to appear as a circle. It sets the border-radius to 50% to create a circular shape, and object-fit is set to cover to ensure the image fills the space properly.
-Hover Effect on Profile Picture: An event listener is added for mouseover and mouseout events on the profile picture (profile-pic). When the mouse hovers over the picture, it scales up slightly (scale(1.1)), and when the mouse leaves, it returns to its normal size (scale(1)).
-Reveal Sections on Scroll: The revealSections function adds a CSS class (show) to each section as it comes into view while scrolling. This triggers a transition effect to fade in and slide each section up.
-Event Listener for Scroll: An event listener is attached to the window object to call revealSections whenever a scroll event occurs.
+# Personal Portfolio Website
+
+A lightweight personal website presenting an introduction, selected projects and a contact interface. The implementation uses plain HTML, CSS and a small amount of JavaScript, making the structure easy to inspect and customize.
+
+## Page sections
+
+- **Home:** an introductory landing section.
+- **About:** a profile image and background information.
+- **Projects:** links to selected work in education, quantum physics and AI.
+- **Contact:** a styled form layout.
+
+The page includes section navigation, a profile-image hover interaction and scroll-triggered reveal effects.
+
+## Preview locally
+
+From the repository root:
+
+```bash
+python -m http.server 8000
+```
+
+Open <http://localhost:8000>. No package installation, frontend framework or build step is required.
+
+## Customize the site
+
+| File | Change here |
+|---|---|
+| [index.html](index.html) | Biography, navigation, project links and page content |
+| [style.css](style.css) | Layout, typography, colors and transitions |
+| [Profile_photo.jpg](Profile_photo.jpg) | Profile image asset |
+
+Keep the section IDs aligned with navigation links when adding new sections. If replacing the portrait, update the image reference in the HTML as needed.
+
+## Contact-form behavior
+
+The contact section is a frontend form only. No message-delivery service or backend endpoint is included, so submitting the form does not establish that a message was sent. Connect a chosen delivery service before presenting it as a working contact channel.
